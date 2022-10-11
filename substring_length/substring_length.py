@@ -12,7 +12,8 @@ def substring_length(s):
     substr_length = 0
     chars = []
     possible_results = []
-    for i in range(len(s)):
+    i = 0
+    while i in range(len(s)):
         if not contains(s[i], chars):
             substr_length = substr_length +1
             chars.append(s[i])
@@ -20,6 +21,8 @@ def substring_length(s):
             possible_results.append(substr_length)
             chars = []
             substr_length = 0
+            i -= 1
+        i += 1
     possible_results.append(substr_length)
 
     return max(possible_results)
